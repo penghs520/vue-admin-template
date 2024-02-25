@@ -1,10 +1,10 @@
 <template>
-    <SvgIcon name="lock" color="red"></SvgIcon>
-    <div class="box">hh</div>
+    <div>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script setup lang="ts">
-
 </script>
 
 <style scoped lang="scss">
