@@ -7,5 +7,9 @@
     {
       "path": "./tsconfig.app.json"
     }
-  ]
+  ],
+  //If you use volar, please add the global component type definition to compilerOptions.types in tsconfig.json.
+  "compilerOptions": {
+    "types": ["element-plus/global"]
+  }
 }
