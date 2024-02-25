@@ -1,13 +1,14 @@
 <template>
-  <el-button type="primary">I am ElButton</el-button>
-  <svg>
-    <use xlink:href="#icon-phone"></use>
-  </svg>
+    <SvgIcon name="lock" color="red"></SvgIcon>
 </template>
 
 <script setup lang="ts">
+import SvgIcon from './components/SvgIcon.vue';
 
 
 
 </script>
 
+<style scoped>
+
+</style>
