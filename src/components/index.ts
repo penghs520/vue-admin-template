@@ -1,4 +1,4 @@
-import SvgIcon from './SvgIcon.vue';
+import SvgIcon from './icon/SvgIcon.vue';
 import type { App, Component } from 'vue';
 const components: { [name: string]: Component } = { SvgIcon };
 

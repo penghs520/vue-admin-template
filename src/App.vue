@@ -4,9 +4,6 @@
 </template>
 
 <script setup lang="ts">
-import SvgIcon from './components/SvgIcon.vue';
-
-
 
 </script>
 
