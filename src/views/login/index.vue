@@ -11,13 +11,27 @@
           </div>
           <el-form-item prop="username">
             <!-- 如果不绑定数据的话，无法输入 -->
-            <el-input :prefix-icon="User" v-model="loginForm.username"></el-input>
+            <el-input
+              :prefix-icon="User"
+              v-model="loginForm.username"
+            ></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input type="password" :prefix-icon="Lock" v-model="loginForm.password" show-password></el-input>
+            <el-input
+              type="password"
+              :prefix-icon="Lock"
+              v-model="loginForm.password"
+              show-password
+            ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button  class="login_btn" type="primary" size="default">登录</el-button>
+            <el-button
+              class="login_btn"
+              type="primary"
+              size="default"
+              @click="login"
+              >登录</el-button
+            >
           </el-form-item>
         </el-form>
       </el-col>
@@ -25,24 +39,29 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import SvgIcon from "@/components/icon/SvgIcon.vue";
+import { User, Lock } from "@element-plus/icons-vue";
+import { reactive } from "vue";
+import  userStore  from "@/stores/user";
 
+let loginForm = reactive({ username: "", password: "" });
 
-<script setup lang='ts'>
-import SvgIcon from '@/components/icon/SvgIcon.vue';
-import { User,Lock } from '@element-plus/icons-vue';
-import { reactive } from 'vue';
-
-let loginForm = reactive({username:'',password:''})
-console.log(loginForm)
-
+function login() {
+  userStore().doLogin(loginForm);
+}
 </script>
 
 <style scoped lang="scss">
+//:deep 可以避免scoped的影响
+// :deep(.el-form-item__label) {
+//   color: aqua;
+// }
 
 .login_container {
   width: 100%;
   height: 100vh;
-  background: url('@/assets/images/background.jpg') no-repeat;
+  background: url("@/assets/images/background.jpg") no-repeat;
   background-size: cover; //cover是让图片铺满整个容器
 
   .login_form {
@@ -77,3 +96,4 @@ console.log(loginForm)
   }
 }
 </style>
+@/stores/user
